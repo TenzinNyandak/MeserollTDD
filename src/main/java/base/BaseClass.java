@@ -8,11 +8,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import common.Commons;
+import common.CommonFunctions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import objects.CreateNewAccount;
 import objects.HomePage;
-import objects.Register;
 import utils.Configuration;
 
 public class BaseClass {
@@ -20,11 +19,9 @@ public class BaseClass {
 	Configuration configuration = new Configuration(null);
 	
 	public WebDriver driver;//if its default then use WebDriver getDriver method which return driver;
-	protected Commons commons;
+	protected CommonFunctions commons;
 	protected HomePage homePage;
-	protected Register register;
 	protected CreateNewAccount createNewAccount;
-
 
 	@BeforeMethod
 	public void setup() {
@@ -58,9 +55,8 @@ public class BaseClass {
 //	}
 	
 	protected void initClasses() {
-		commons = new Commons();
+		commons = new CommonFunctions();
 		homePage = new HomePage(driver, commons);
-//		register = new Register(driver, commons);
 		createNewAccount = new CreateNewAccount(driver, commons);
 	}
 

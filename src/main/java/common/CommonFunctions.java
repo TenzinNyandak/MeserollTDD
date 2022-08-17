@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import reporting.Loggers;
 
-public class Commons {
+public class CommonFunctions {
 	
 	public void click(WebElement element) {
 		try {
